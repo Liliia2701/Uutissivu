@@ -12,11 +12,49 @@
 <body class="light-theme">
     <br><br><br> 
     <ul>
-        <li class="active"><a href="div.html">Uutiset</a></li>
-        <li class="active"><a href="urheilu.html">Urheilu</a></li>
+        <li class="active"><a href="div.php">Uutiset</a></li>
+        <li class="active"><a href="urheilu.php">Urheilu</a></li>
+        <?php 
+
+        if (isset($_SESSION['tunnus'])) {
+
+            echo "<li><a href='logout.php'>Kirjaudu ulos</a></li>";
+
+
+        } else {
+            echo '<li><a href="login.php">Kirjaudu sisään</a></li>';
+        }
+
+        ?>
         <li><button class="btn">Vaihto temma</buttom></li>
     </ul>
-    <a href="Hiihtoliitto.html" class="uutinen-link">
+    
+    <?php
+    include "server/connect.php";
+
+    $sql = "SELECT * FROM uutinen  WHERE kategoria = 1 ORDER BY id DESC";
+    $result = $conn->query( $sql );
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo '
+            <a href="#">
+            <div class="uutinen">
+            <img src="images/';
+            echo $row['kuva'];
+            echo '">
+            <h2>';
+            echo $row['otsikko'];
+            echo "</h2>";
+            echo "<p>";
+            echo $row['teksti'];
+            echo "</p>";
+            echo "</div></a>";
+        }
+    } else {
+        echo "Yhteys tietokantaan katkennut";
+    }
+    ?>
+    <a href="Hiihtoliitto.php" class="uutinen-link">
     <div class="uutinen">
         <img src="https://images.cdn.yle.fi/image/upload/ar_1.500092131932928,c_fill,g_faces,h_511,w_767/dpr_2.0/q_auto:eco/f_auto/fl_lossy/v1741196251/39-143171067c88b1e53994" alt="Hiihtoliitto pelastui" width="">
         <h2>Hiihtoliitto pelastui kuin ihmeen kaupalla – vakava talouskriisi kääntyi nyt voitolliseksi tulokseksi</h2>

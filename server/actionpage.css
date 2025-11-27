@@ -1,0 +1,127 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ececec, #d4d4d4);
+    min-height: 100vh;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #333;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+ul li {
+    margin-right: 15px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+ul li a:hover {
+    background: #555;
+}
+
+.active a {
+    background: grey;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-top: 30px;
+    color: #222;
+}
+
+.varoitus {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+fieldset {
+    width: 400px;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+legend {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+input[type="text"],
+input[type="file"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #fafafa;
+    transition: 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+input[type="password"]:focus {
+    border-color: #666;
+    outline: none;
+    background: white;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #444;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: #222;
+}
+
+button {
+    padding: 10px 18px;
+    background: grey;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #555;
+}

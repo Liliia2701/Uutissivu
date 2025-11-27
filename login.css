@@ -1,0 +1,103 @@
+
+body { 
+    font-family: Arial; 
+    background: #f9f9f9; 
+}
+
+fieldset { 
+    width: 300px; 
+    margin: 100px auto; 
+    padding: 20px; 
+    border-radius: 10px; 
+    border: 2px solid #ccc; 
+    background: #fff; 
+}
+
+legend { 
+    font-weight: bold; 
+    font-size: 18px; 
+}
+
+input[type="text"], input[type="password"] { 
+    width: 100%; 
+    padding: 8px; 
+    margin: 5px 0 15px 0; 
+    border-radius: 5px; 
+    border: 1px solid #ccc; 
+}
+
+input[type="submit"] { 
+    width: 100%; 
+    padding: 10px; 
+    background: #777; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+input[type="submit"]:hover { 
+    background: #777; 
+}
+.varoitus { 
+    color: red; 
+    text-align: center; 
+}
+
+.btn {
+    background-color: grey;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    color: white;
+    padding: 11px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    display: flex;              
+    align-items: center;
+}
+
+li {
+    
+    margin-right: 10px;  
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.active {
+    background-color: grey;
+    font-weight: bold;
+    border-radius: 12px;
+    float: left;
+}
+
+li a.hover {
+    background-color: aqua;
+}
+
+a {
+    color: black;
+}

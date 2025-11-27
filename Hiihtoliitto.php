@@ -12,8 +12,9 @@
 <body class="light-theme">
     <br><br><br> 
     <ul>
-        <li class="active"><a href="div.html">Uutiset</a></li>
-        <li class="active"><a href="urheilu.html">Urheilu</a></li>
+        <li class="active"><a href="div.php">Uutiset</a></li>
+        <li class="active"><a href="urheilu.php">Urheilu</a></li>
+        <li><a href="login.php">Kirjaudu</a></li>
         <li><button class="btn">Vaihto temma</buttom></li>
     </ul>
     <div class="uutinen">

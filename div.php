@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "server/connect.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +16,46 @@
 <body class="light-theme">
     <br><br><br> 
     <ul>
-        <li class="active"><a href="div.html">Uutiset</a></li>
-        <li class="active"><a href="urheilu.html">Urheilu</a></li>
+        <li class="active"><a href="div.php">Uutiset</a></li>
+        <li class="active"><a href="urheilu.php">Urheilu</a></li>
+        
+        <?php 
+
+        if (isset($_SESSION['tunnus'])) {
+
+            echo "<li><a href='logout.php'>Kirjaudu ulos</a></li>";
+        } else {
+            echo '<li><a href="login.php">Kirjaudu sisään</a></li>';
+        }
+        ?>
         <li><button class="btn">Vaihto temma</buttom></li>
-    </ul>
+        </ul>
+
+
+    <?php
+
+    $sql = "SELECT * FROM uutinen ORDER BY id DESC";
+    $result = $conn->query( $sql );
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo '
+            <a href="#">
+            <div class="uutinen">
+            <img src="images/';
+            echo $row['kuva'];
+            echo '">
+            <h2>';
+            echo $row['otsikko'];
+            echo "</h2>";
+            echo "<p>";
+            echo $row['teksti'];
+            echo "</p>";
+            echo "</div></a>";
+        }
+    } else {
+        echo "Yhteys tietokantaan katkennut";
+    }
+    ?>
 
     <a href="#" class="uutinen-link">
     <div class="uutinen">
